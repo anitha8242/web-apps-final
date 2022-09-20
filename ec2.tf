@@ -2,7 +2,7 @@
  resource "aws_instance" "instance" {
      ami           = "ami-05fa00d4c63e32376"
      instance_type = "t2.micro"
-     key_name      = "master"
+     key_name      = "master1"
      vpc_security_group_ids = ["${aws_security_group.demosg.id}"]
      subnet_id              ="${aws_subnet.public-subnet-1.id}"
      associate_public_ip_address =true
@@ -15,7 +15,7 @@ tags = {
  resource "aws_instance" "demoinstance1" {
      ami           = "ami-05fa00d4c63e32376"
      instance_type = "t2.micro"
-     key_name      = "master"
+     key_name      = "master1"
      vpc_security_group_ids =["${aws_security_group.demosg.id}"]
      subnet_id              ="${aws_subnet.public-subnet-2.id}"
      associate_public_ip_address =true

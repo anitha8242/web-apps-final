@@ -38,7 +38,7 @@ tags = {
 
 # Creating key_pair to attach EC2 Instance
 resource "aws_key_pair" "key-pair" {
-  key_name   = "master"
+  key_name   = "master1"
   public_key = tls_private_key.rsa.public_key_openssh
 }
 resource "tls_private_key" "rsa" {
@@ -47,5 +47,5 @@ resource "tls_private_key" "rsa" {
 }
 resource "local_file" "key-pair" {
   content  = tls_private_key.rsa.private_key_pem
-  filename = "master"
+  filename = "master1"
 }
